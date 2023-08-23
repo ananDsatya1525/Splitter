@@ -1,0 +1,320 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Space Mono', monospace;
+}
+
+
+.attribution a {
+  color: blue;
+  
+}
+.attribution a:hover{
+  color: tomato;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(186, 39%, 72%);
+}
+
+.main_container {
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.left_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 700px; */
+}
+
+.AmountDiv {
+  display: flex;
+  flex-direction: column;
+  line-height: 0px;
+}
+
+.AmountDiv p {
+  color: hsl(186, 15%, 36%);
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: 'Space Mono', monospace;
+}
+
+.AmountDiv>input {
+  background-image: url(images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-position-y: center;
+  background-position-x: 10px;
+  background-color: hsla(185, 38%, 72%, 0.525);
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: hsl(183, 100%, 15%);
+}
+
+.AmountDiv>input:hover {
+  border: 2px solid #2fd7b5;
+  cursor: pointer;
+}
+
+.tips {
+  display: flex;
+  flex-direction: column;
+}
+
+.tips>p {
+  color: hsl(186, 15%, 36%);
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: 'Space Mono', monospace;
+}
+
+.tips button {
+  width: 150px;
+  padding: 12px 9px 12px 9px;
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #ffff;
+  background-color: #00494d;
+}
+
+.tips button:hover {
+  background-color: hsl(186, 39%, 72%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+
+.tips .percentage> input {
+  width: 142px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: hsl(183, 100%, 15%);
+}
+
+.tips input:hover {
+  border: 2px solid #2fd7b5;
+  cursor: pointer;
+}
+
+::placeholder {
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+}
+
+.tips .percentage {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 13px;
+
+}
+
+
+.noOf_people {
+  display: flex;
+  flex-direction: column;
+}
+
+.sentence_of_count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+}
+
+.noOf_people>input {
+  background-image: url(images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-position-y: center;
+  background-position-x: 10px;
+  background-color: hsla(185, 38%, 72%, 0.525);
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: hsl(183, 100%, 15%);
+}
+
+.noOf_people>input:hover {
+  border: 2px solid #2fd7b5;
+  cursor: pointer;
+}
+
+.right_subContainer {
+  width: 300px;
+  padding: 30px;
+  margin-left: 30px;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 10px;
+}
+
+.tip_per_person {
+  line-height: 0px;
+}
+
+.tipAmount {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  align-items: center;
+  line-height: 0px;
+  margin-bottom: 10px;
+}
+
+.whiteColor {
+  color: #fff;
+  font-weight: bold;
+}
+
+.lightColor {
+  color: #ffffff6f;
+  font-weight: bold;
+}
+
+.Tip_amount>p {
+  font-size: 30px;
+  color: #2fd7b5;
+}
+
+#reset {
+  margin-top: 80px;
+  font-size: 20px;
+  font-family: 'Space Mono', monospace;
+  padding: 8px 15px 8px 15px;
+  width: 100%;
+  background-color: #2fd7b5;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.628);
+}
+#warning{
+ color:tomato;
+ display: none;
+ font-weight: bold;
+}
+.Splitter{
+  display: flex;
+  flex-direction: column;
+  line-height: 0px;
+  position: absolute;
+  color: #00494daf;
+  top: 10px;
+  
+}
+.splitter{
+ letter-spacing: 5px;
+ font-family: 'Space Mono', monospace;
+  
+}
+.TTER{
+  letter-spacing: 5px;
+  line-height: 0px;
+  font-family: 'Space Mono', monospace;
+}
+@media screen and (max-width: 480px) {
+  body{
+height: auto;
+}
+.main_container{
+flex-direction: column;
+width: 90%;
+height: auto;
+display: flex;
+overflow: scroll;
+justify-content: center;
+position: absolute;
+border-top-left-radius:20px ;
+border-top-right-radius:20px ;
+top: 150px;
+}
+.tips{
+width: 80%;
+}
+.percentage{
+padding-left: 10px;
+}
+.tips .percentage > button{
+ width: 100px;
+}
+.tips .percentage > input{
+width: 100px;
+}
+.attribution{
+display: none;
+
+}
+.right_subContainer{
+margin-top: 30px;
+}
+
+}
+@media screen and (min-width: 360px) and (max-width:480px){
+body{
+height: auto;
+}
+.main_container{
+flex-direction: column;
+width: 90%;
+height: auto;
+display: flex;
+overflow: scroll;
+justify-content: center;
+position: absolute;
+border-top-left-radius:20px ;
+border-top-right-radius:20px ;
+top: 150px;
+}
+.tips{
+width: 80%;
+}
+.percentage{
+padding-left: 10px;
+}
+.tips .percentage > button{
+ width: 100px;
+}
+.tips .percentage > input{
+width: 100px;
+}
+.attribution{
+display: none;
+
+}
+.right_subContainer{
+margin-top: 30px;
+}
+}

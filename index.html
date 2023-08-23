@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+   <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <div class="Splitter">
+    <h2 class="splitter">SPLI</h2>
+    <h2 class="TTER">TTER</h2>
+  </div>
+  <div class="main_container">
+    <div class="left_subContainer">
+      <div class="AmountDiv">
+        <p>Bill</p>
+        <input type="text" name="Amount" id="Amount">
+      </div>
+      <div class="tips">
+        <p>Select tip %</p>
+        <div class="percentage">
+          <button type="button" id="five" value="5">5%</button>
+          <button type="button" id="ten" value="10">10%</button>
+          <button type="button" id="onefive" value="15">15%</button>
+          <button type="button" id="twofive" value="25">25%</button>
+          <button type="button" id="fifty" value="50">50%</button>
+          <input type="text" name="custom_tip" id="custom_tip" placeholder="Custom" onchange="changing()">
+        </div>
+      </div>
+      <div class="noOf_people">
+        <div class="sentence_of_count">
+          <p>Number of people</p>
+          <p id="warning">can't be zero</p>
+        </div>
+        <input type="text" name="Count_of_people" id="Count_of_people" >
+      </div>
+    </div>
+    <div class="right_subContainer" id="rightSub">
+      <div class="tipAmount">
+        <div class="tip_per_person">
+          <p class="whiteColor">Tip Amount</p>
+          <p class="lightColor">/ person</p>
+        </div>
+        <div class="Tip_amount">
+          <p id="tip_value">0.00</p>
+        </div>
+      </div>
+      <div class="tipAmount">
+        <div class="tip_per_person">
+          <p class="whiteColor">Total</p>
+          <p class="lightColor">/ person</p>
+        </div>
+        <div class="Tip_amount">
+          <p id="Total_value">0.00</p>
+        </div>
+      </div>
+      <button id="reset" type="button">RESET</button>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/ananDsatya1525">anandsatya1525</a>.
+  </div>
+
+
+
+  <script>
+    let tip_value = document.getElementById('tip_value');
+    let five = document.getElementById('five');
+    let waring = document.getElementById('warning');
+    let Total_value = document.getElementById('Total_value');
+    let countInput = document.getElementById('Count_of_people')
+    five.addEventListener("click", function () {
+      five.style.backgroundColor = "#2fd7b5";
+      ten.style.backgroundColor = "#00494d";
+      onefive.style.backgroundColor = "#00494d";
+      twofive.style.backgroundColor = "#00494d";
+      fifty.style.backgroundColor = "#00494d";
+      let amount = document.getElementById('Amount').value;
+      let Count_of_people = document.getElementById('Count_of_people').value;
+      if (Count_of_people== "" || Count_of_people == null ||Count_of_people==0) {
+      waring.style.display = "block"
+      document.getElementById('Count_of_people').style.color = "tomato"
+      countInput.style.border = "2px solid tomato"
+       return false;
+  }
+  else{
+    waring.style.display = "none"
+    countInput.style.border = "none"
+      document.getElementById('Count_of_people').style.color = '#00494d';
+       let addedTax = (Number(five.value)/100)*Number(amount);
+      let perPerson = addedTax/Number(Count_of_people)
+      let normalcostDivision = Number(amount)/Number(Count_of_people);
+      console.log(perPerson+normalcostDivision)
+      tip_value.innerHTML = perPerson.toFixed(2);
+      Total_value.innerHTML =  (normalcostDivision+perPerson).toFixed(2);
+       return false;
+  }
+    })
+
+    let ten = document.getElementById('ten');
+    ten.addEventListener("click", function () {
+      five.style.backgroundColor = "#00494d";
+      ten.style.backgroundColor = "#2fd7b5";
+      onefive.style.backgroundColor = "#00494d";
+      twofive.style.backgroundColor = "#00494d";
+      fifty.style.backgroundColor = "#00494d";
+      let amount = document.getElementById('Amount').value;
+      let Count_of_people = document.getElementById('Count_of_people').value;
+      if (Count_of_people== "" || Count_of_people == null ||Count_of_people==0) {
+      waring.style.display = "block"
+      document.getElementById('Count_of_people').style.color = "tomato"
+      countInput.style.border = "2px solid tomato"
+       return false;
+  }
+  else{
+    waring.style.display = "none"
+    countInput.style.border = "none"
+      document.getElementById('Count_of_people').style.color = '#00494d';
+       let addedTax = (Number(ten.value)/100)*Number(amount);
+      let perPerson = addedTax/Number(Count_of_people)
+      let normalcostDivision = Number(amount)/Number(Count_of_people);
+      console.log(perPerson+normalcostDivision)
+      tip_value.innerHTML = perPerson.toFixed(2);
+      Total_value.innerHTML =  (normalcostDivision+perPerson).toFixed(2);
+       return false;
+  }
+    })
+
+    let onefive = document.getElementById('onefive');
+    onefive.addEventListener("click", function () {
+      five.style.backgroundColor = "#00494d";
+      ten.style.backgroundColor = "#00494d";
+      onefive.style.backgroundColor = "#2fd7b5";
+      twofive.style.backgroundColor = "#00494d";
+      fifty.style.backgroundColor = "#00494d";
+
+      let amount = document.getElementById('Amount').value;
+      let Count_of_people = document.getElementById('Count_of_people').value;
+      if (Count_of_people== "" || Count_of_people == null ||Count_of_people==0) {
+      waring.style.display = "block"
+      document.getElementById('Count_of_people').style.color = "tomato"
+      countInput.style.border = "2px solid tomato"
+       return false;
+  }
+  else{
+    waring.style.display = "none"
+    countInput.style.border = "none"
+      document.getElementById('Count_of_people').style.color = '#00494d';
+       let addedTax = (Number(onefive.value)/100)*Number(amount);
+      let perPerson = addedTax/Number(Count_of_people)
+      let normalcostDivision = Number(amount)/Number(Count_of_people);
+      console.log(perPerson+normalcostDivision)
+      tip_value.innerHTML = perPerson.toFixed(2);
+      Total_value.innerHTML =  (normalcostDivision+perPerson).toFixed(2);
+       return false;
+  }    
+    })
+
+    let twofive = document.getElementById('twofive');
+    twofive.addEventListener("click", function () {
+      five.style.backgroundColor = "#00494d";
+      ten.style.backgroundColor = "#00494d";
+      onefive.style.backgroundColor = "#00494d";
+      twofive.style.backgroundColor = "#2fd7b5";
+      fifty.style.backgroundColor = "#00494d";
+      
+
+      let amount = document.getElementById('Amount').value;
+      let Count_of_people = document.getElementById('Count_of_people').value;
+      if (Count_of_people== "" || Count_of_people == null ||Count_of_people==0) {
+      waring.style.display = "block"
+      document.getElementById('Count_of_people').style.color = "tomato"
+      countInput.style.border = "2px solid tomato"
+       return false;
+  }
+  else{
+    waring.style.display = "none"
+    countInput.style.border = "none"
+      document.getElementById('Count_of_people').style.color = '#00494d';
+       let addedTax = (Number(twofive.value)/100)*Number(amount);
+      let perPerson = addedTax/Number(Count_of_people)
+      let normalcostDivision = Number(amount)/Number(Count_of_people);
+      console.log(perPerson+normalcostDivision)
+      tip_value.innerHTML = perPerson.toFixed(2);
+      Total_value.innerHTML =  (normalcostDivision+perPerson).toFixed(2);
+       return false;
+  }
+    })
+
+    let fifty = document.getElementById('fifty');
+    fifty.addEventListener("click", function () {
+      five.style.backgroundColor = "#00494d";
+      ten.style.backgroundColor = "#00494d";
+      onefive.style.backgroundColor = "#00494d";
+      twofive.style.backgroundColor = "#00494d";
+      fifty.style.backgroundColor = "#2fd7b5";
+
+
+      let amount = document.getElementById('Amount').value;
+      let Count_of_people = document.getElementById('Count_of_people').value;
+      if (Count_of_people== "" || Count_of_people == null ||Count_of_people==0) {
+      waring.style.display = "block"
+      document.getElementById('Count_of_people').style.color = "tomato"
+      countInput.style.border = "2px solid tomato"
+       return false;
+  }
+  else{
+    waring.style.display = "none"
+    countInput.style.border = "none"
+      document.getElementById('Count_of_people').style.color = '#00494d';
+       let addedTax = (Number(fifty.value)/100)*Number(amount);
+      let perPerson = addedTax/Number(Count_of_people)
+      let normalcostDivision = Number(amount)/Number(Count_of_people);
+      console.log(perPerson+normalcostDivision)
+      tip_value.innerHTML = perPerson.toFixed(2);
+      Total_value.innerHTML =  (normalcostDivision+perPerson).toFixed(2);
+       return false;
+  }
+    })
+   
+
+  let custom_tip = document.getElementById('custom_tip');
+    custom_tip.addEventListener("keypress",function(event){
+      
+      if(event.key =="Enter"){
+        event.preventDefault();
+        let amount = document.getElementById('Amount').value;
+      let Count_of_people = document.getElementById('Count_of_people').value;
+      custip = document.getElementById('custom_tip').value;
+      if (Count_of_people== "" || Count_of_people == null ||Count_of_people==0) {
+      waring.style.display = "block"
+      document.getElementById('Count_of_people').style.color = "tomato"
+      countInput.style.border = "2px solid tomato"
+       return false;
+  }
+  else{
+    waring.style.display = "none"
+    countInput.style.border = "none"
+      document.getElementById('Count_of_people').style.color = '#00494d';
+       let addedTax = (Number(custip)/100)*Number(amount);
+      let perPerson = addedTax/Number(Count_of_people)
+      let normalcostDivision = Number(amount)/Number(Count_of_people);
+      console.log(perPerson+normalcostDivision)
+      tip_value.innerHTML = perPerson.toFixed(2);
+      Total_value.innerHTML =  (normalcostDivision+perPerson).toFixed(2);
+       return false;
+  }
+      }
+    })
+    let reset = document.getElementById('reset');
+    reset.addEventListener('click',function(){
+      waring.style.display = "none"
+      Total_value.innerHTML = 0.0;
+      tip_value.innerHTML = 0.0;
+      countInput.style.border = "none";
+      countInput.value='';
+      onefive.style.backgroundColor = "#00494d";
+      twofive.style.backgroundColor = "#00494d";
+      five.style.backgroundColor = "#00494d";
+      ten.style.backgroundColor = "#00494d";
+      document.getElementById('Amount').value='';
+      document.getElementById('custom_tip').value =''
+
+    })
+
+  </script>
+</body>
+
+</html>
